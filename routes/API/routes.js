@@ -15,6 +15,11 @@ const { body,
 /************************** *
  *       GET  routes        *
  ***************************/
+// Desc only for testing
+// INDEX        @host/index
+router.get('/', (req, res)=>{
+        res.send('its okay ... thing works');
+});
 
 // DESC           Get List of ALL stores
 // STORES         @localhost/api/
