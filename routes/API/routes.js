@@ -18,6 +18,7 @@ const { body,
 // Desc only for testing
 // INDEX        @host/index
 router.get('/', (req, res)=>{
+        console.log('Hello World Of Heroku :D');
         res.send('its okay ... thing works');
 });
 
