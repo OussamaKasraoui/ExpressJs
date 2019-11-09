@@ -14,7 +14,7 @@ const app=express();
       require('dotenv').config({path: __dirname + '/.env'});
       require('./core/passport')(passport);
 //init
-app.listen(process.env.APP_PORT, () => console.info("Back-End server running on port : "+ process.env.APP_PORT));
+app.listen(process.env.APP_PORT || 5000, () => console.info("Back-End server running on port : "+ process.env.APP_PORT));
 
 //connect To Database
  mongoose.connect(process.env.DB_URI, {useNewUrlParser: true});
