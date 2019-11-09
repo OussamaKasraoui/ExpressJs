@@ -19,7 +19,14 @@ const app=express();
 app.set('port', (process.env.APP_PORT || 5000));
 
 //init
-app.listen(app.get('port'), () => console.info("Back-End server running on port : "+ process.env.APP_PORT));
+//app.listen(app.get('port'), () => console.info("Back-End server running on port : "+ process.env.APP_PORT));
+//For avoidong Heroku $PORT error
+app.get('/', function(request, response) {
+    var result = 'App is running'
+    response.send(result);
+}).listen(app.get('port'), function() {
+    console.log('App is running, server is listening on port ', app.get('port'));
+});
 
 //connect To Database
  mongoose.connect(process.env.DB_URI, {useNewUrlParser: true});
